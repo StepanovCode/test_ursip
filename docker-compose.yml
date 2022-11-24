@@ -1,0 +1,13 @@
+version: '3.3'
+
+services:
+  database:
+    image: postgres:15.1-alpine
+    container_name: ursip_db
+    ports:
+      - 8080:5432
+    restart: always
+    environment:
+      POSTGRES_DB: ursip_db
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
